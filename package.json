@@ -1,0 +1,15 @@
+{
+  "name": "heayteam-cypress-test-othmane",
+  "version": "1.0.0",
+  "description": "test sur Cypress pour intégrer HeyTeam",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "author": "Othmane Bajaddi",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
