@@ -6,8 +6,10 @@ Feature: Add a customizable gift un my cart
       Given I visit the homepage 
       When I am logged in with heyothmane
       And I check I am logged in as heyothmane
-      #And I have an empty cart
+      # TODO : And I have an empty cart
 
     Scenario: I want to add a customized gift in my cart
       Given I type "BEFADA Bijoux personnalisés prénom femme" in the searchbar
-      
+      When I submit the search
+      Then I can see results
+      And I click on the first result
