@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -23,4 +23,10 @@ Cypress.on('uncaught:exception', (err) => {
     if (err.message.includes('Unexpected token')) {
       return false;
     }
+
+    if (err.message.includes("Could not resolve 'light 1em Amazon Ember' as a font")) {
+      return false;
+    }
   });
+
+  

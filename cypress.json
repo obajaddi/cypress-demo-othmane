@@ -14,6 +14,7 @@
     "defaultCommandTimeout": 20000,
     "ignoreTestFiles": ["*.js", "*.md"],
     "experimentalSessionAndOrigin":true,
+    "testFiles": "**/*.{feature,features}",
     "retries": {
         "runMode": 0,
         "openMode": 0
