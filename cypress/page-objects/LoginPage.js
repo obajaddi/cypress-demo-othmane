@@ -3,12 +3,12 @@ export default class LoginPage{
         //TODO
     }
 
-    //--- 1st secion ---//
+    //--- 1st section ---//
     static typeMail(mail) {
         cy.get('#ap_email').clear().type(mail);
     }
 
-    static typeContinue(mail) {
+    static typeContinue() {
         cy.get('#continue').click();
     }
 
