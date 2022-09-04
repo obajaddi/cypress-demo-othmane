@@ -9,6 +9,9 @@ export default class Navbar {
 
     static searchItem(text) {
         cy.get('#twotabsearchtextbox').type(`${text}`);
+    }
+
+    static submitSearch() {
         cy.get('#nav-search-submit-button').click();
     }
 
@@ -22,5 +25,9 @@ export default class Navbar {
 
     static addedToBasketOk() {
         cy.get('.a-padding-none .a-icon-alert').should('be.visible');
+    }
+
+    static checkUserName(user) {
+        cy.get('#nav-link-accountList-nav-line-1').invoke('text').should('contains', user);
     }
 }

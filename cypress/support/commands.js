@@ -1,19 +1,22 @@
+import Navbar from '../page-objects/Navbar'
+import LoginPage from '../page-objects/LoginPage'
+
 // no cach session : cy.login('user', { cacheSession: false })
-Cypress.Commands.add('login', (compte, { cacheSession = true } = {}) => {
-    const login = () => {
-      cy.visit('/');
-      cy.get('.alltricks-Header-userTrigger').click({ force: true });
-      cy.get('@comptes').then((comptes) => {
-        cy.get('#email').type(comptes[compte]);
-        cy.get('[data-cy="submit-login"]').click();
-        cy.get('#password').type(comptes['password']);
-        cy.get('[data-cy="submit-connection"]').click();
-        cy.get("p[data-is-connected='true']");
-      });
-    };
-    if (cacheSession) {
-      cy.session(compte, login);
-    } else {
-      login();
-    }
-  });
+Cypress.Commands.add('login', (compte, { cacheSession = true } = {}) => {  
+  const login = () => {
+    cy.fixture('accounts').as('comptes');
+    // ----------------------------------
+    cy.get('@comptes').then((comptes) => {
+      Navbar.clickOnLogin();
+      LoginPage.typeMail(comptes[compte]);
+      LoginPage.typeContinue();
+      LoginPage.typePassword(comptes['password']);
+      LoginPage.clickOnSignIn();
+    });    
+  };
+  if (cacheSession) {
+    cy.session(compte, login);
+  } else {
+    login();
+  }
+});
