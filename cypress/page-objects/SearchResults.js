@@ -4,6 +4,6 @@ export default class SearchResults {
     }
 
     static clickOnFirstResult() {
-        cy.get("[data-csa-c-pos='1'] .a-price-whole").click();
+        cy.get("[data-csa-c-pos='1'] .a-price-whole").click({force : true});
     }
 }

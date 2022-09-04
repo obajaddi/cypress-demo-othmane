@@ -1,7 +1,8 @@
 /** @module Common **/
 
-import { After, Before, Given, Then, When } from 'cypress-cucumber-preprocessor/steps';
-import Navbar from '../../page-objects/Navbar'
+import { After, Before, Given, Then, When, And } from 'cypress-cucumber-preprocessor/steps';
+import Navbar from '../../page-objects/Navbar';
+import SearchResults from '../../page-objects/SearchResults';
 
 function iVisitHomePage() {
     return cy.visit('/');
@@ -14,16 +15,27 @@ function iAmLoggedInAsWord(user) {
 Given('I am logged in with {word}', iAmLoggedInAsWord);
 
 function iCheckUserName(user) {
-    Navbar.checkUserName(user);
+    return Navbar.checkUserName(user);
 }
 Given('I check I am logged in as {word}', iCheckUserName);
 
 
 function iTypeInSearchBar(text) {
-    Navbar.searchItem(text);
+    return Navbar.searchItem(text);
 }
 Given('I type {string} in the searchbar', iTypeInSearchBar);
 
+function iSubmitSearch() {
+    return Navbar.submitSearch();
+}
+When('I submit the search', iSubmitSearch);
 
+function iCanSeeResults() {
+    return SearchResults.checkResultsAvailable();
+}
+Given('I can see results', iCanSeeResults);
 
-
+function iClickOnTheFirstResult() {
+    return SearchResults.clickOnFirstResult();
+}
+And('I click on the first result', iClickOnTheFirstResult);
