@@ -13,3 +13,6 @@ Feature: Add a customizable gift un my cart
       When I submit the search
       Then I can see results
       And I click on the first result
+
+      And I click on the customize button
+      * I customize the gift
