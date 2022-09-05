@@ -1,17 +1,24 @@
 {
+    "env": {
+        "TAGS": "not @ignore"
+      },
     "baseUrl": "https://www.amazon.fr",
+    "viewportHeight": 1080,
+    "viewportWidth": 1920,
     "chromeWebSecurity": false,
     "watchForFileChanges": false,
-    "animationDistanceThreshold": 0,
+    "animationDistanceThreshold": 10,
     "pageLoadTimeout": 100000,
     "requestTimeout": 100000,
     "responseTimeout": 100000,
     "defaultCommandTimeout": 20000,
     "ignoreTestFiles": ["*.js", "*.md"],
-    "scrollBehavior": false,
     "experimentalSessionAndOrigin":true,
+    "testFiles": "**/*.{feature,features}",
     "retries": {
         "runMode": 0,
         "openMode": 0
-    }
+    },
+    "blockHosts": [
+      ]
 }
