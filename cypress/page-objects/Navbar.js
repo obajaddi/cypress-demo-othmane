@@ -20,7 +20,8 @@ export default class Navbar {
     }
 
     static checkBasketCount(numberOfArticleInBasket) {
-        cy.get('#nav-cart-count').should('contains', numberOfArticleInBasket);
+        cy.wait(2000);
+        cy.get('#nav-cart-count').invoke('text').should('contains', numberOfArticleInBasket);
     }
 
     static addedToBasketOk() {

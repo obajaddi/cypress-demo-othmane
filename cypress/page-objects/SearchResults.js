@@ -6,4 +6,8 @@ export default class SearchResults {
     static clickOnFirstResult() {
         cy.get("[data-csa-c-pos='1'] .a-price-whole").click({force : true});
     }
+
+    static clickOnChosenGift(gift) {
+        cy.contains(gift).click({ force : true });
+    }
 }

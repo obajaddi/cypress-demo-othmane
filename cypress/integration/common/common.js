@@ -1,5 +1,3 @@
-/** @module Common **/
-
 import { After, Before, Given, Then, When, And } from 'cypress-cucumber-preprocessor/steps';
 import Navbar from '../../page-objects/Navbar';
 import SearchResults from '../../page-objects/SearchResults';
@@ -39,3 +37,8 @@ function iClickOnTheFirstResult() {
     return SearchResults.clickOnFirstResult();
 }
 And('I click on the first result', iClickOnTheFirstResult);
+
+function iCheckTheBasketCount(number) {
+    return Navbar.checkBasketCount(number);
+}
+And('I can see the basket updated with {word} articles', iCheckTheBasketCount);
