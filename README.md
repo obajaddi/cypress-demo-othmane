@@ -1,5 +1,12 @@
 # Feature test : add a customizable gift in the basket
 
+# Construction du repo : 
+1. 1er commit avec le projet initialisé et fonctionnel 
+2. 1 branche pour : 
+- Le POM
+- Les steps gherkin
+- Leurs implémentations
+
 ## Résumé des TODO : 
 1. S'assurer que le panier est vide au début du test 
 2. Finir la page object pour le login
